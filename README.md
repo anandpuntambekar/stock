@@ -30,12 +30,6 @@ Download ~15 years of data and run the default strategy:
 python nifty_strategy.py --start 2009-01-01
 ```
 
-Launch the Streamlit UI:
-
-```bash
-streamlit run ui_app.py
-```
-
 Run a simple grid search over window sizes and thresholds:
 
 ```bash
@@ -59,10 +53,3 @@ python nifty_strategy.py \
   day open (BOD), which matches a daily decision workflow.
 - This is a research tool. Please validate assumptions and incorporate
   realistic transaction costs/slippage before live trading.
-
-## Troubleshooting
-
-- If `pip install -r requirements.txt` fails with proxy or `403 Forbidden` errors,
-  the environment likely blocks outbound access to PyPI. Configure your proxy
-  settings or install dependencies in an environment with PyPI access before
-  running the UI.
