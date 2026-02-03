@@ -1,0 +1,5 @@
+numpy
+pandas
+yfinance==1.1.0
+streamlit==1.19.0
+altair==4.2.2
