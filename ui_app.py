@@ -67,6 +67,10 @@ def rolling_median(series: pd.Series, window_days: int, fn) -> pd.Series:
 
 
 def percent_from_reference(close: pd.Series, reference: pd.Series) -> pd.Series:
+    if isinstance(close, pd.DataFrame):
+        close = close.iloc[:, 0]
+    if isinstance(reference, pd.DataFrame):
+        reference = reference.iloc[:, 0]
     return (close - reference) / reference * 100.0
 
 
