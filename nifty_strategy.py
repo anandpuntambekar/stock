@@ -49,6 +49,9 @@ def download_nifty_data(
     symbol: str = DEFAULT_SYMBOL,
 ) -> pd.DataFrame:
     data = yf.download(symbol, start=start, end=end, interval="1d", auto_adjust=False)
+    if isinstance(data.columns, pd.MultiIndex):
+        data.columns = data.columns.get_level_values(0)
+        data = data.loc[:, ~data.columns.duplicated()]
     data = data.rename(
         columns={
             "Open": "BOD",
